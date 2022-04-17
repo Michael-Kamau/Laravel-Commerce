@@ -21,16 +21,19 @@
                     <div class="col-span-6 sm:col-span-3">
                         <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
                         <input wire:model="firstname" type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        @error('firstname') <span class="font-thin text-red-400 text-xs">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="col-span-6 sm:col-span-3">
                         <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
                         <input wire:model="lastname" type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        @error('lastname') <span class="font-thin text-red-400 text-xs">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="col-span-6 sm:col-span-4">
                         <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>
                         <input wire:model="email" type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        @error('email') <span class="font-thin text-red-400 text-xs">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="col-span-6 sm:col-span-3">
@@ -40,11 +43,13 @@
                             <option>Canada</option>
                             <option>Mexico</option>
                         </select>
+                        @error('country') <span class="font-thin text-red-400 text-xs">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="col-span-6">
                         <label for="street-address" class="block text-sm font-medium text-gray-700">Street address</label>
                         <textarea wire:model="street_address" type="text" name="street-address" id="street-address" autocomplete="street-address" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
+                        @error('street_address') <span class="font-thin text-red-400 text-xs">{{ $message }}</span> @enderror
                     </div>
 
                 </div>

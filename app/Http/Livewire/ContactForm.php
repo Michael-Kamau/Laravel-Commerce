@@ -15,6 +15,20 @@ class ContactForm extends Component
 
     public $success_message=null;
 
+    protected $rules = [
+        'firstname' => 'required|min:6',
+        'lastname' => 'required|min:6',
+        'email' => 'required|email',
+        'country' => 'required|min:3',
+        'street_address' => 'min:3',
+    ];
+    
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
 
     public function submitForm()
     {
